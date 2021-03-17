@@ -20,6 +20,9 @@ let package = Package(
         publicHeadersPath: "./Include",
         cSettings: [
             CSetting.headerSearchPath("./**"),
+            .define("NS_BLOCK_ASSERTIONS",
+                    to: "1",
+                    .when(configuration: .release))
         ]),
     ],
     cxxLanguageStandard: .cxx11
